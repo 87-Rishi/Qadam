@@ -1,282 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footcap - Find your footware</title>
-
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- 
-    - preload banner
-  -->
-  <link rel="preload" href="./assets/images/hero-banner.png" as="image">
-  <style>
-  /* Header styling */
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Qadam - Find your footware</title>
+      
+        <!-- 
+          - favicon!
+        -->
+        <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+      
+        <!-- 
+          - custom css link
+        -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+      
+        <!-- 
+          - google font link
+        -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+      
+        <!-- 
+          - preload banner
+        -->
+        <link rel="preload" href="./assets/images/hero-banner.png" as="image">
+        <style>
+           /*============for arabic rtl and ltl======================*/
+                  /* Default style (English) */
+      body {
+        font-family: 'Arial', sans-serif;
+        direction: ltr;
+        text-align: left;
+      }
+      
+      /* Arabic style */
+      body.arabic {
+        font-family: 'Lateef', cursive;
+        direction: rtl;
+        text-align: right;
+      }
+      /*================end===============================*/
+          #logo{
+            font-size: 36px;
+            font-weight: 550;
+            color: black;
+            text-shadow: 0px 1px 1px black;
+            margin-bottom: 5px;
+        }
+        #logo span{
+            color: #ffa500;
+            display: inline-block;
+        }
+         /* Header styling */
 header nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-}
-
-
-header nav ul li a {
-  text-decoration: none;
-  color: #000;
-  font-size: 18px;
-}
-
-/* Popup background overlay */
-#popup-form {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Popup form content */
-.popup-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  width: 50%;
-  max-width: 500px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.popup-content h2 {
-  margin-top: 0;
-}
-
-.popup-content input,
-.popup-content textarea {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.popup-content button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.popup-content button:hover {
-  background-color: #218838;
-}
-
-/* Close button */
-.close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 25px;
-  cursor: pointer;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .popup-content {
-      width: 80%;
+    display: flex;
+    list-style: none;
+    padding: 0;
   }
-}
-
-@media (max-width: 480px) {
-  .popup-content {
-      width: 90%;
-  }
-}
-
-  </style>
-
-</head>
-
-<body id="top">
   
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <div class="overlay" data-overlay></div>
-
-      <a href="#" class="logo">
-        <img src="./assets/images/logo.svg" width="160" height="50" alt="Footcap logo">
-      </a>
-
-      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
-
-      <nav class="navbar" data-navbar>
-
-        <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
-          <ion-icon name="close-outline"></ion-icon>
-        </button>
-
-        <a href="#" class="logo">
-          <img src="./assets/images/logo.svg" width="190" height="50" alt="Footcap logo">
-        </a>
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <a href="#home" class="navbar-link">Home</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#about" class="navbar-link">About</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#products" class="navbar-link">Products</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#shop" class="navbar-link">Shop</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#blog" class="navbar-link">Blog</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="" class="navbar-link"  id="contact-btn">Contact</a>
-          </li>
-        </ul>
-
-        <ul class="nav-action-list">
-
-          <li>
-            <button class="nav-action-btn">
-              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-
-              <span class="nav-action-text">Search</span>
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+  }
+  
+  /* Popup background overlay */
+  #popup-form {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Popup form content */
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .popup-content h2 {
+    margin-top: 0;
+  }
+  
+  .popup-content input,
+  .popup-content textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .popup-content button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .popup-content button:hover {
+    background-color: #218838;
+  }
+  
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .popup-content {
+        width: 80%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .popup-content {
+        width: 90%;
+    }
+  }
+  
+     
+        </style>
+      
+      </head>
+</head>
+<body>
+    <header class="header" data-header>
+        <div class="container">
+    
+          <div class="overlay" data-overlay></div>
+    
+          
+            <a class="navbar-brand" href="/index.html" id="logo"><span>Q</span>adam</a>
+          
+    
+          <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+    
+          <nav class="navbar" data-navbar>
+    
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
             </button>
-          </li>
-
-          <li>
-            <a href="#" class="nav-action-btn">
-              <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-
-              <span class="nav-action-text">Login / Register</span>
+    
+            <a href="#" class="logo">
+              <img src="./assets/images/logo.svg" width="190" height="50" alt="Footcap logo">
             </a>
-          </li>
+    
+            <ul class="navbar-list">
+    
+              <li class="navbar-item">
+                <a href="#home" class="navbar-link" data-translate="Home" >Home</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#about" class="navbar-link" data-translate="About">About</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#products" class="navbar-link" data-translate="Products">Products</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#shop" class="navbar-link" data-translate="Shop">Shop</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="#blog" class="navbar-link" data-translate="Blog">Blog</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="" class="navbar-link"  id="contact-btn" data-translate="Contacts">Contact</a>
+              </li>
+            </ul>
+    
+            <ul class="nav-action-list">
+    
+              <li>
+                <button class="nav-action-btn">
+                  <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+    
+                  <span class="nav-action-text" data-translate="Search">Search</span>
+                </button>
+              </li>
+    
+              <li>
+                <a href="#" class="nav-action-btn">
+                  <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+    
+                  <span class="nav-action-text" data-translate="Login/Register">Login / Register</span>
+                </a>
+              </li>
+    
+              <li>
+                <button class="nav-action-btn">
+                  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+    
+                  <span class="nav-action-text" data-translate="Wishlist">Wishlist</span>
+    
+                  <data class="nav-action-badge" value="5" aria-hidden="true">5</data>
+                </button>
+              </li>
+    
+              <li>
+                <button class="nav-action-btn">
+                  <ion-icon name="bag-outline" aria-hidden="true"></ion-icon>
+    
+                  <data class="nav-action-text" value="318.00" data-translate="Basket">Basket: <strong>$318.00</strong></data>
+    
+                  <data class="nav-action-badge" value="4" aria-hidden="true">4</data>
+                </button>
+              </li>
+    
+              <li>
+                <div class="nav-action-btn">
+                    <select id="languageSwitcher">
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+              </li>
+    
+            </ul>
+    
+          </nav>
+    
+        </div>
+      </header>
 
-          <li>
-            <button class="nav-action-btn">
-              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-
-              <span class="nav-action-text">Wishlist</span>
-
-              <data class="nav-action-badge" value="5" aria-hidden="true">5</data>
-            </button>
-          </li>
-
-          <li>
-            <button class="nav-action-btn">
-              <ion-icon name="bag-outline" aria-hidden="true"></ion-icon>
-
-              <data class="nav-action-text" value="318.00">Basket: <strong>$318.00</strong></data>
-
-              <data class="nav-action-badge" value="4" aria-hidden="true">4</data>
-            </button>
-          </li>
-
-          <li>
-            <div class="nav-action-btn">
-              <button onclick="window.location.href='./Arabic.html'">العربية</button>
-              <button onclick="window.location.href='./index.html'">English</button>
-            </div>
-          </li>
-
-        </ul>
-
-      </nav>
-
-    </div>
-  </header>
-   <!-- conatct pop up  -->
+       <!-- conatct pop up  -->
   <div id="popup-form" class="popup">
     <div class="popup-content">
         <span class="close">&times;</span>
-        <h2>Contact Us</h2>
+        <h2 data-translate="Contact Us">Contact Us</h2>
         <form>
-            <label for="name">Name</label>
+            <label for="name" data-translate="Name">Name</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="email">Email</label>
+            <label for="email" data-translate="Email">Email</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="message">Phone Number</label>
+            <label for="message" data-translate="Phone">Phone Number</label>
             <input type="number" id="phone" name="phone" required>
 
-            <label for="message">Message</label>
+            <label for="message" data-translate="Message">Message</label>
             <textarea id="message" name="message" required></textarea>
 
-            <button type="submit">Send</button>
+            <button type="submit" data-translate="Send">Send</button>
         </form>
     </div>
 </div>
 
-
-
-
-  <main>
+<main>
     <article>
-
-      <!-- 
+          <!-- 
         - #HERO
       -->
 
       <section class="section hero" style="background-image: url('./assets/images/hero-banner.png')" id="home">
         <div class="container">
 
-          <h2 class="h1 hero-title">
-            New Summer <strong>Shoes Collection</strong>
+          <h2 class="h1 hero-title" data-translate="Summer" >
+            New Summer <strong data-translate="Shoes">Shoes Collection</strong>
           </h2>
 
-          <p class="hero-text">
+          <p class="hero-text" data-translate="hero">
             Competently expedite alternative benefits whereas leading-edge catalysts for change. Globally leverage
             existing an
             expanded array of leadership.
           </p>
 
           <a href="#products"> <button class="btn btn-primary">
-            <span>Shop Now</span>
+            <span data-translate="Shop Now">Shop Now</span>
 
             <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
           </button></a>
@@ -284,10 +304,7 @@ header nav ul li a {
         </div>
       </section>
 
-
-
-
-
+      
       <!-- 
         - #COLLECTION
       -->
@@ -299,10 +316,10 @@ header nav ul li a {
 
             <li>
               <div class="collection-card" style="background-image: url('./assets/images/collection-1.jpg')">
-                <h3 class="h4 card-title">Men Collections</h3>
+                <h3 class="h4 card-title"  data-translate="Men Collection">Men Collections</h3>
 
                 <a href="#" class="btn btn-secondary">
-                  <span>Explore All</span>
+                  <span  data-translate="Explore">Explore All</span>
 
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
@@ -311,10 +328,10 @@ header nav ul li a {
 
             <li>
               <div class="collection-card" style="background-image: url('./assets/images/collection-2.jpg')">
-                <h3 class="h4 card-title">Women Collections</h3>
+                <h3 class="h4 card-title" data-translate="Women Collection">Women Collections</h3>
 
                 <a href="#" class="btn btn-secondary">
-                  <span>Explore All</span>
+                  <span data-translate="Explore" >Explore All</span>
 
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
@@ -323,10 +340,10 @@ header nav ul li a {
 
             <li>
               <div class="collection-card" style="background-image: url('./assets/images/collection-3.jpg')">
-                <h3 class="h4 card-title">Sports Collections</h3>
+                <h3 class="h4 card-title" data-translate="Sports Collections">Sports Collections</h3>
 
                 <a href="#" class="btn btn-secondary">
-                  <span>Explore All</span>
+                  <span data-translate="Explore">Explore All</span>
 
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
@@ -338,10 +355,7 @@ header nav ul li a {
         </div>
       </section>
 
-
-
-
-
+      
       <!-- 
         - #PRODUCT
       -->
@@ -349,32 +363,32 @@ header nav ul li a {
       <section class="section product" id="products">
         <div class="container">
 
-          <h2 class="h2 section-title">Bestsellers Products</h2>
+          <h2 class="h2 section-title" data-translate="Bestseller">Bestsellers Products</h2>
 
           <ul class="filter-list">
 
             <li>
-              <button class="filter-btn  active">All</button>
+              <button class="filter-btn  active" data-translate="All">All</button>
             </li>
 
             <li>
-              <button class="filter-btn">Nike</button>
+              <button class="filter-btn" data-translate="Nike">Nike</button>
             </li>
 
             <li>
-              <button class="filter-btn">Adidas</button>
+              <button class="filter-btn" data-translate="Adidas">Adidas</button>
             </li>
 
             <li>
-              <button class="filter-btn">Puma</button>
+              <button class="filter-btn" data-translate="Puma">Puma</button>
             </li>
 
             <li>
-              <button class="filter-btn">Bata</button>
+              <button class="filter-btn" data-translate="Bata">Bata</button>
             </li>
 
             <li>
-              <button class="filter-btn">Apex</button>
+              <button class="filter-btn" data-translate="Apex">Apex</button>
             </li>
 
           </ul>
@@ -388,7 +402,7 @@ header nav ul li a {
                   <img src="./assets/images/product-1.jpg" width="312" height="350" loading="lazy"
                     alt="Running Sneaker Shoes" class="image-contain">
 
-                  <div class="card-badge">New</div>
+                  <div class="card-badge" data-translate="New">New</div>
 
                   <ul class="card-action-list">
 
@@ -397,7 +411,7 @@ header nav ul li a {
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                      <div class="card-action-tooltip" id="card-label-1" data-translate="Add to Cart">Add to Cart</div>
                     </li>
 
                     <li class="card-action-item">
@@ -405,7 +419,7 @@ header nav ul li a {
                         <ion-icon name="heart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                      <div class="card-action-tooltip" id="card-label-2" data-translate="Add to Wishlist">Add to Wishlist</div>
                     </li>
 
                     <li class="card-action-item">
@@ -413,7 +427,7 @@ header nav ul li a {
                         <ion-icon name="eye-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                      <div class="card-action-tooltip" id="card-label-3" data-translate="Quick View">Quick View</div>
                     </li>
 
                     <li class="card-action-item">
@@ -421,7 +435,7 @@ header nav ul li a {
                         <ion-icon name="repeat-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-4" data-translate="Compare">Compare</div>
                     </li>
 
                   </ul>
@@ -430,12 +444,12 @@ header nav ul li a {
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Women</a>
+                    <a href="#" class="card-cat-link" data-translate="Men">Men</a> /
+                    <a href="#" class="card-cat-link" data-translate="Women">Women</a>
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Running Sneaker Shoes</a>
+                    <a href="#" data-translate="Running Sneaker Shoes">Running Sneaker Shoes</a>
                   </h3>
 
                   <data class="card-price" value="180.85">$180.85</data>
@@ -459,7 +473,7 @@ header nav ul li a {
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                      <div class="card-action-tooltip" id="card-label-1"  data-translate="Add to Cart">Add to Cart</div>
                     </li>
 
                     <li class="card-action-item">
@@ -467,7 +481,7 @@ header nav ul li a {
                         <ion-icon name="heart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                      <div class="card-action-tooltip" id="card-label-2"  data-translate="Add to Wishlist">Add to Whishlist</div>
                     </li>
 
                     <li class="card-action-item">
@@ -475,7 +489,7 @@ header nav ul li a {
                         <ion-icon name="eye-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                      <div class="card-action-tooltip" id="card-label-3" data-translate="Quick View">Quick View</div>
                     </li>
 
                     <li class="card-action-item">
@@ -483,7 +497,7 @@ header nav ul li a {
                         <ion-icon name="repeat-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-4"  data-translate="Compare">Compare</div>
                     </li>
 
                   </ul>
@@ -492,12 +506,12 @@ header nav ul li a {
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Sports</a>
+                    <a href="#" class="card-cat-link" data-translate="Men">Men</a> /
+                    <a href="#" class="card-cat-link" data-translate="Sports">Sports</a>
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Leather Mens Slipper</a>
+                    <a href="#" data-translate="Leather Mens Slipper">Leather Mens Slipper</a>
                   </h3>
 
                   <data class="card-price" value="190.85">$190.85</data>
@@ -514,7 +528,7 @@ header nav ul li a {
                   <img src="./assets/images/product-3.jpg" width="312" height="350" loading="lazy"
                     alt="Simple Fabric Shoe" class="image-contain">
 
-                  <div class="card-badge">New</div>
+                  <div class="card-badge"  data-translate="New">New</div>
 
                   <ul class="card-action-list">
 
@@ -523,7 +537,7 @@ header nav ul li a {
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                      <div class="card-action-tooltip" id="card-label-1"  data-translate="Add to Cart">Add to Cart</div>
                     </li>
 
                     <li class="card-action-item">
@@ -531,7 +545,7 @@ header nav ul li a {
                         <ion-icon name="heart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                      <div class="card-action-tooltip" id="card-label-2"  data-translate="Add to Wishlist">Add to Whishlist</div>
                     </li>
 
                     <li class="card-action-item">
@@ -539,7 +553,7 @@ header nav ul li a {
                         <ion-icon name="eye-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                      <div class="card-action-tooltip" id="card-label-3" data-translate="Quick View">Quick View</div>
                     </li>
 
                     <li class="card-action-item">
@@ -547,7 +561,7 @@ header nav ul li a {
                         <ion-icon name="repeat-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-4"  data-translate="Compare">Compare</div>
                     </li>
 
                   </ul>
@@ -556,12 +570,12 @@ header nav ul li a {
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Women</a>
+                    <a href="#" class="card-cat-link" data-translate="Men">Men</a> /
+                    <a href="#" class="card-cat-link" data-translate="Women">Women</a>
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Simple Fabric Shoe</a>
+                    <a href="#" data-translate="Simple Fabric Shoe">Simple Fabric Shoe</a>
                   </h3>
 
                   <data class="card-price" value="160.85">$160.85</data>
@@ -587,7 +601,7 @@ header nav ul li a {
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                      <div class="card-action-tooltip" id="card-label-1 "  data-translate="Add to Cart">Add to Cart</div>
                     </li>
 
                     <li class="card-action-item">
@@ -595,7 +609,7 @@ header nav ul li a {
                         <ion-icon name="heart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                      <div class="card-action-tooltip" id="card-label-2"  data-translate="Add to Wishlist">Add to Whishlist</div>
                     </li>
 
                     <li class="card-action-item">
@@ -603,7 +617,7 @@ header nav ul li a {
                         <ion-icon name="eye-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                      <div class="card-action-tooltip" id="card-label-3" data-translate="Quick View">Quick View</div>
                     </li>
 
                     <li class="card-action-item">
@@ -611,7 +625,7 @@ header nav ul li a {
                         <ion-icon name="repeat-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-4"  data-translate="Compare">Compare</div>
                     </li>
 
                   </ul>
@@ -620,12 +634,12 @@ header nav ul li a {
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Sports</a>
+                    <a href="#" class="card-cat-link"  data-translate="Men" >Men</a> /
+                    <a href="#" class="card-cat-link"  data-translate="Sports">Sports</a>
                   </div>
 
-                  <h3 class="h3 card-title">
-                    <a href="#">Air Jordan 7 Retro </a>
+                  <h3 class="h3 card-title" >
+                    <a href="#" data-translate="Air Jordan 7 Retro">Air Jordan 7 Retro </a>
                   </h3>
 
                   <data class="card-price" value="170.85">$170.85 <del>$200.21</del></data>
@@ -642,7 +656,7 @@ header nav ul li a {
                   <img src="./assets/images/product-5.jpg" width="312" height="350" loading="lazy"
                     alt="Nike Air Max 270 SE" class="image-contain">
 
-                  <div class="card-badge">New</div>
+                  <div class="card-badge"  data-translate="New">New</div>
 
                   <ul class="card-action-list">
 
@@ -651,7 +665,7 @@ header nav ul li a {
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                      <div class="card-action-tooltip" id="card-label-1"  data-translate="Add to Cart">Add to Cart</div>
                     </li>
 
                     <li class="card-action-item">
@@ -659,7 +673,7 @@ header nav ul li a {
                         <ion-icon name="heart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                      <div class="card-action-tooltip" id="card-label-2"  data-translate="Add to Wishlist">Add to Whishlist</div>
                     </li>
 
                     <li class="card-action-item">
@@ -667,7 +681,7 @@ header nav ul li a {
                         <ion-icon name="eye-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                      <div class="card-action-tooltip" id="card-label-3" data-translate="Quick View">Quick View</div>
                     </li>
 
                     <li class="card-action-item">
@@ -675,7 +689,7 @@ header nav ul li a {
                         <ion-icon name="repeat-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-4"  data-translate="Compare">Compare</div>
                     </li>
 
                   </ul>
@@ -684,12 +698,12 @@ header nav ul li a {
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Women</a>
+                    <a href="#" class="card-cat-link"  data-translate="Men">Men</a> /
+                    <a href="#" class="card-cat-link"  data-translate="Women">Women</a>
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Nike Air Max 270 SE</a>
+                    <a href="#"  data-translate="Nike Air Max 270 SE">Nike Air Max 270 SE</a>
                   </h3>
 
                   <data class="card-price" value="120.85">$120.85</data>
@@ -713,7 +727,7 @@ header nav ul li a {
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                      <div class="card-action-tooltip" id="card-label-1"  data-translate="Add to Cart">Add to Cart</div>
                     </li>
 
                     <li class="card-action-item">
@@ -721,7 +735,7 @@ header nav ul li a {
                         <ion-icon name="heart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                      <div class="card-action-tooltip" id="card-label-2"  data-translate="Add to Wishlist">Add to Whishlist</div>
                     </li>
 
                     <li class="card-action-item">
@@ -729,7 +743,7 @@ header nav ul li a {
                         <ion-icon name="eye-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                      <div class="card-action-tooltip" id="card-label-3" data-translate="Quick View">Quick View</div>
                     </li>
 
                     <li class="card-action-item">
@@ -737,7 +751,7 @@ header nav ul li a {
                         <ion-icon name="repeat-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-4"  data-translate="Compare">Compare</div>
                     </li>
 
                   </ul>
@@ -746,12 +760,12 @@ header nav ul li a {
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Women</a>
+                    <a href="#" class="card-cat-link"  data-translate="Men">Men</a> /
+                    <a href="#" class="card-cat-link"  data-translate="Women">Women</a>
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Adidas Sneakers Shoes</a>
+                    <a href="#"  data-translate="Adidas Sneakers Shoes">Adidas Sneakers Shoes</a>
                   </h3>
 
                   <data class="card-price" value="100.85">$100.85</data>
@@ -775,7 +789,7 @@ header nav ul li a {
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                      <div class="card-action-tooltip" id="card-label-1"  data-translate="Add to Cart">Add to Cart</div>
                     </li>
 
                     <li class="card-action-item">
@@ -783,7 +797,7 @@ header nav ul li a {
                         <ion-icon name="heart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                      <div class="card-action-tooltip" id="card-label-2"  data-translate="Add to Wishlist">Add to Whishlist</div>
                     </li>
 
                     <li class="card-action-item">
@@ -791,7 +805,7 @@ header nav ul li a {
                         <ion-icon name="eye-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                      <div class="card-action-tooltip" id="card-label-3" data-translate="Quick View">Quick View</div>
                     </li>
 
                     <li class="card-action-item">
@@ -799,7 +813,7 @@ header nav ul li a {
                         <ion-icon name="repeat-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-4"  data-translate="Compare">Compare</div>
                     </li>
 
                   </ul>
@@ -808,12 +822,12 @@ header nav ul li a {
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Sports</a>
+                    <a href="#" class="card-cat-link"  data-translate="Men">Men</a> /
+                    <a href="#" class="card-cat-link"  data-translate="Sports">Sports</a>
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Nike Basketball shoes</a>
+                    <a href="#"  data-translate="Nike Basketball shoes">Nike Basketball shoes</a>
                   </h3>
 
                   <data class="card-price" value="120.85">$120.85</data>
@@ -837,7 +851,7 @@ header nav ul li a {
                         <ion-icon name="cart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                      <div class="card-action-tooltip" id="card-label-1"  data-translate="Add to Cart">Add to Cart</div>
                     </li>
 
                     <li class="card-action-item">
@@ -845,7 +859,7 @@ header nav ul li a {
                         <ion-icon name="heart-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                      <div class="card-action-tooltip" id="card-label-2"  data-translate="Add to Wishlist">Add to Whishlist</div>
                     </li>
 
                     <li class="card-action-item">
@@ -853,7 +867,7 @@ header nav ul li a {
                         <ion-icon name="eye-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                      <div class="card-action-tooltip" id="card-label-3" data-translate="Quick View">Quick View</div>
                     </li>
 
                     <li class="card-action-item">
@@ -861,7 +875,7 @@ header nav ul li a {
                         <ion-icon name="repeat-outline"></ion-icon>
                       </button>
 
-                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <div class="card-action-tooltip" id="card-label-4"  data-translate="Compare">Compare</div>
                     </li>
 
                   </ul>
@@ -870,12 +884,12 @@ header nav ul li a {
                 <div class="card-content">
 
                   <div class="card-cat">
-                    <a href="#" class="card-cat-link">Men</a> /
-                    <a href="#" class="card-cat-link">Women</a>
+                    <a href="#" class="card-cat-link"  data-translate="Men">Men</a> /
+                    <a href="#" class="card-cat-link"  data-translate="Women">Women</a>
                   </div>
 
                   <h3 class="h3 card-title">
-                    <a href="#">Simple Fabric Shoe</a>
+                    <a href="#"  data-translate="Simple Fabric Shoe">Simple Fabric Shoe</a>
                   </h3>
 
                   <data class="card-price" value="100.85">$100.85</data>
@@ -891,10 +905,7 @@ header nav ul li a {
       </section>
 
 
-
-
-
-      <!-- 
+        <!-- 
         - #CTA
       -->
 
@@ -905,12 +916,12 @@ header nav ul li a {
 
             <li>
               <div class="cta-card" style="background-image: url('./assets/images/cta-1.jpg')">
-                <p class="card-subtitle">Adidas Shoes</p>
+                <p class="card-subtitle" data-translate="Adidas Shoes">Adidas Shoes</p>
 
-                <h3 class="h2 card-title">The Summer Sale Off 50%</h3>
+                <h3 class="h2 card-title" data-translate="The Summer Sale Off 50%">The Summer Sale Off 50%</h3>
 
                 <a href="#" class="btn btn-link">
-                  <span>Shop Now</span>
+                  <span data-translate="Shop Now">Shop Now</span>
 
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
@@ -919,12 +930,12 @@ header nav ul li a {
 
             <li>
               <div class="cta-card" style="background-image: url('./assets/images/cta-2.jpg')">
-                <p class="card-subtitle">Nike Shoes</p>
+                <p class="card-subtitle"  data-translate="Nike Shoes">Nike Shoes</p>
 
-                <h3 class="h2 card-title">Makes Yourself Keep Sporty</h3>
+                <h3 class="h2 card-title" data-translate="Makes Yourself Keep Sporty">Makes Yourself Keep Sporty</h3>
 
                 <a href="#" class="btn btn-link">
-                  <span>Shop Now</span>
+                  <span data-translate="Shop Now">Shop Now</span>
 
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
@@ -948,10 +959,10 @@ header nav ul li a {
         <div class="container">
 
           <div class="special-banner" style="background-image: url('./assets/images/special-banner.jpg')">
-            <h2 class="h3 banner-title">New Trend Edition</h2>
+            <h2 class="h3 banner-title" data-translate="New Trend Edition">New Trend Edition</h2>
 
             <a href="#" class="btn btn-link">
-              <span>Explore All</span>
+              <span  data-translate="Explore">Explore All</span>
 
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -960,7 +971,7 @@ header nav ul li a {
           <div class="special-product">
 
             <h2 class="h2 section-title">
-              <span class="text">Nike Special</span>
+              <span class="text" data-translate="Nike Special">Nike Special</span>
 
               <span class="line"></span>
             </h2>
@@ -974,7 +985,7 @@ header nav ul li a {
                     <img src="./assets/images/product-1.jpg" width="312" height="350" loading="lazy"
                       alt="Running Sneaker Shoes" class="image-contain">
 
-                    <div class="card-badge">New</div>
+                    <div class="card-badge" data-translate="New">New</div>
 
                     <ul class="card-action-list">
 
@@ -983,7 +994,7 @@ header nav ul li a {
                           <ion-icon name="cart-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                        <div class="card-action-tooltip" id="card-label-1" data-translate="Add to Cart">Add to Cart</div>
                       </li>
 
                       <li class="card-action-item">
@@ -991,7 +1002,7 @@ header nav ul li a {
                           <ion-icon name="heart-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                        <div class="card-action-tooltip" id="card-label-2"  data-translate="Add to Wishlist">Add to Wishlist</div>
                       </li>
 
                       <li class="card-action-item">
@@ -999,7 +1010,7 @@ header nav ul li a {
                           <ion-icon name="eye-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                        <div class="card-action-tooltip" id="card-label-3"  data-translate="Quick View">Quick View</div>
                       </li>
 
                       <li class="card-action-item">
@@ -1007,7 +1018,7 @@ header nav ul li a {
                           <ion-icon name="repeat-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                        <div class="card-action-tooltip" id="card-label-4"  data-translate="Compare">Compare</div>
                       </li>
 
                     </ul>
@@ -1016,12 +1027,12 @@ header nav ul li a {
                   <div class="card-content">
 
                     <div class="card-cat">
-                      <a href="#" class="card-cat-link">Men</a> /
-                      <a href="#" class="card-cat-link">Women</a>
+                      <a href="#" class="card-cat-link"  data-translate="Men" >Men</a> /
+                      <a href="#" class="card-cat-link"  data-translate="Women" >Women</a>
                     </div>
 
                     <h3 class="h3 card-title">
-                      <a href="#">Running Sneaker Shoes</a>
+                      <a href="#"  data-translate="Running Sneaker Shoes">Running Sneaker Shoes</a>
                     </h3>
 
                     <data class="card-price" value="180.85">$180.85</data>
@@ -1045,7 +1056,7 @@ header nav ul li a {
                           <ion-icon name="cart-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                        <div class="card-action-tooltip" id="card-label-1"  data-translate="Add to Cart">Add to Cart</div>
                       </li>
 
                       <li class="card-action-item">
@@ -1053,7 +1064,7 @@ header nav ul li a {
                           <ion-icon name="heart-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                        <div class="card-action-tooltip" id="card-label-2"  data-translate="Add to Wishlist">Add to Wishlist</div>
                       </li>
 
                       <li class="card-action-item">
@@ -1061,7 +1072,7 @@ header nav ul li a {
                           <ion-icon name="eye-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                        <div class="card-action-tooltip" id="card-label-3"  data-translate="Quick View">Quick View</div>
                       </li>
 
                       <li class="card-action-item">
@@ -1069,7 +1080,7 @@ header nav ul li a {
                           <ion-icon name="repeat-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                        <div class="card-action-tooltip" id="card-label-4"  data-translate="Compare">Compare</div>
                       </li>
 
                     </ul>
@@ -1078,12 +1089,12 @@ header nav ul li a {
                   <div class="card-content">
 
                     <div class="card-cat">
-                      <a href="#" class="card-cat-link">Men</a> /
-                      <a href="#" class="card-cat-link">Sports</a>
+                      <a href="#" class="card-cat-link"  data-translate="Men">Men</a> /
+                      <a href="#" class="card-cat-link"  data-translate="Sports">Sports</a>
                     </div>
 
                     <h3 class="h3 card-title">
-                      <a href="#">Leather Mens Slipper</a>
+                      <a href="#"  data-translate="Leather Mens Slipper">Leather Mens Slipper</a>
                     </h3>
 
                     <data class="card-price" value="190.85">$190.85</data>
@@ -1100,7 +1111,7 @@ header nav ul li a {
                     <img src="./assets/images/product-3.jpg" width="312" height="350" loading="lazy"
                       alt="Simple Fabric Shoe" class="image-contain">
 
-                    <div class="card-badge">New</div>
+                    <div class="card-badge"  data-translate="New">New</div>
 
                     <ul class="card-action-list">
 
@@ -1109,7 +1120,7 @@ header nav ul li a {
                           <ion-icon name="cart-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                        <div class="card-action-tooltip" id="card-label-1"  data-translate="Add to Cart">Add to Cart</div>
                       </li>
 
                       <li class="card-action-item">
@@ -1117,7 +1128,7 @@ header nav ul li a {
                           <ion-icon name="heart-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                        <div class="card-action-tooltip" id="card-label-2"  data-translate="Add to Wishlist">Add to Wishlist</div>
                       </li>
 
                       <li class="card-action-item">
@@ -1125,7 +1136,7 @@ header nav ul li a {
                           <ion-icon name="eye-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                        <div class="card-action-tooltip" id="card-label-3"  data-translate="Quick View">Quick View</div>
                       </li>
 
                       <li class="card-action-item">
@@ -1133,7 +1144,7 @@ header nav ul li a {
                           <ion-icon name="repeat-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                        <div class="card-action-tooltip" id="card-label-4"  data-translate="Compare">Compare</div>
                       </li>
 
                     </ul>
@@ -1142,12 +1153,12 @@ header nav ul li a {
                   <div class="card-content">
 
                     <div class="card-cat">
-                      <a href="#" class="card-cat-link">Men</a> /
-                      <a href="#" class="card-cat-link">Women</a>
+                      <a href="#" class="card-cat-link"  data-translate="Men">Men</a> /
+                      <a href="#" class="card-cat-link"  data-translate="Women">Women</a>
                     </div>
 
                     <h3 class="h3 card-title">
-                      <a href="#">Simple Fabric Shoe</a>
+                      <a href="#"  data-translate="Simple Fabric Shoe">Simple Fabric Shoe</a>
                     </h3>
 
                     <data class="card-price" value="160.85">$160.85</data>
@@ -1173,7 +1184,7 @@ header nav ul li a {
                           <ion-icon name="cart-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                        <div class="card-action-tooltip" id="card-label-1"  data-translate="Add to Cart">Add to Cart</div>
                       </li>
 
                       <li class="card-action-item">
@@ -1181,7 +1192,7 @@ header nav ul li a {
                           <ion-icon name="heart-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-2">Add to Whishlist</div>
+                        <div class="card-action-tooltip" id="card-label-2"  data-translate="Add to Wishlist">Add to Wishlist</div>
                       </li>
 
                       <li class="card-action-item">
@@ -1189,7 +1200,7 @@ header nav ul li a {
                           <ion-icon name="eye-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                        <div class="card-action-tooltip" id="card-label-3"  data-translate="Quick View">Quick View</div>
                       </li>
 
                       <li class="card-action-item">
@@ -1197,7 +1208,7 @@ header nav ul li a {
                           <ion-icon name="repeat-outline"></ion-icon>
                         </button>
 
-                        <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                        <div class="card-action-tooltip" id="card-label-4"  data-translate="Compare">Compare</div>
                       </li>
 
                     </ul>
@@ -1206,12 +1217,12 @@ header nav ul li a {
                   <div class="card-content">
 
                     <div class="card-cat">
-                      <a href="#" class="card-cat-link">Men</a> /
-                      <a href="#" class="card-cat-link">Sports</a>
+                      <a href="#" class="card-cat-link"  data-translate="Men">Men</a> /
+                      <a href="#" class="card-cat-link"  data-translate="Sports">Sports</a>
                     </div>
 
                     <h3 class="h3 card-title">
-                      <a href="#">Air Jordan 7 Retro </a>
+                      <a href="#"  data-translate="Air Jordan 7 Retro">Air Jordan 7 Retro </a>
                     </h3>
 
                     <data class="card-price" value="170.85">$170.85 <del>$200.21</del></data>
@@ -1227,12 +1238,7 @@ header nav ul li a {
 
         </div>
       </section>
-
-
-
-
-
-      <!-- 
+       <!-- 
         - #SERVICE
       -->
 
@@ -1249,9 +1255,9 @@ header nav ul li a {
                 </div>
 
                 <div>
-                  <h3 class="h4 card-title">Free Shiping</h3>
+                  <h3 class="h4 card-title"  data-translate="Free Shiping">Free Shiping</h3>
 
-                  <p class="card-text">
+                  <p class="card-text"  data-translate="All orders over">
                     All orders over <span>$150</span>
                   </p>
                 </div>
@@ -1267,9 +1273,9 @@ header nav ul li a {
                 </div>
 
                 <div>
-                  <h3 class="h4 card-title">Quick Payment</h3>
+                  <h3 class="h4 card-title"  data-translate="Quick Payment">Quick Payment</h3>
 
-                  <p class="card-text">
+                  <p class="card-text"  data-translate="100% secure payment">
                     100% secure payment
                   </p>
                 </div>
@@ -1285,9 +1291,9 @@ header nav ul li a {
                 </div>
 
                 <div>
-                  <h3 class="h4 card-title">Free Returns</h3>
+                  <h3 class="h4 card-title"  data-translate="Free Returns">Free Returns</h3>
 
-                  <p class="card-text">
+                  <p class="card-text"  data-translate="Money back in 30 days">
                     Money back in 30 days
                   </p>
                 </div>
@@ -1303,9 +1309,9 @@ header nav ul li a {
                 </div>
 
                 <div>
-                  <h3 class="h4 card-title">24/7 Support</h3>
+                  <h3 class="h4 card-title"  data-translate="24/7 Support">24/7 Support</h3>
 
-                  <p class="card-text">
+                  <p class="card-text"  data-translate="Get Quick Support">
                     Get Quick Support
                   </p>
                 </div>
@@ -1424,9 +1430,9 @@ header nav ul li a {
 
         <div class="footer-brand">
 
-          <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" width="160" height="50" alt="Footcap logo">
-          </a>
+         
+            <a class="navbar-brand" width="160" height="50" href="/index.html" id="logo"><span>Q</span>adam</a>
+          
 
           <ul class="social-list">
 
@@ -1463,14 +1469,14 @@ header nav ul li a {
           <ul class="footer-list">
 
             <li>
-              <p class="footer-list-title" id="contact">Contact Us</p>
+              <p class="footer-list-title" id="contact" data-translate="Contact Us">Contact Us</p>
             </li>
 
             <li>
               <address class="footer-link">
                 <ion-icon name="location"></ion-icon>
 
-                <span class="footer-link-text">
+                <span class="footer-link-text" data-translate="#201 , 27-268/c/1 , S.C.B Nagar , Gajularamaram , Hyderabad -500055 , Telangana State.">
                   #201 , 27-268/c/1 , S.C.B Nagar , Gajularamaram , Hyderabad -500055 , Telangana State. 
                  </span>
               </address>
@@ -1497,14 +1503,14 @@ header nav ul li a {
           <ul class="footer-list">
 
             <li>
-              <p class="footer-list-title">My Account</p>
+              <p class="footer-list-title" data-translate="My Account">My Account</p>
             </li>
 
             <li>
               <a href="#" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
 
-                <span class="footer-link-text">My Account</span>
+                <span class="footer-link-text"  data-translate="My Account">My Account</span>
               </a>
             </li>
 
@@ -1512,7 +1518,7 @@ header nav ul li a {
               <a href="#" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
 
-                <span class="footer-link-text">View Cart</span>
+                <span class="footer-link-text"  data-translate="View Cart">View Cart</span>
               </a>
             </li>
 
@@ -1520,7 +1526,7 @@ header nav ul li a {
               <a href="#" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
 
-                <span class="footer-link-text">Wishlist</span>
+                <span class="footer-link-text" data-translate="Wishlist">Wishlist</span>
               </a>
             </li>
 
@@ -1528,7 +1534,7 @@ header nav ul li a {
               <a href="#" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
 
-                <span class="footer-link-text">Compare</span>
+                <span class="footer-link-text" data-translate="Compare">Compare</span>
               </a>
             </li>
 
@@ -1536,7 +1542,7 @@ header nav ul li a {
               <a href="#" class="footer-link">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
 
-                <span class="footer-link-text">New Products</span>
+                <span class="footer-link-text" data-translate="New Products">New Products</span>
               </a>
             </li>
 
@@ -1544,39 +1550,39 @@ header nav ul li a {
 
           <div class="footer-list">
 
-            <p class="footer-list-title">Opening Time</p>
+            <p class="footer-list-title" data-translate="Opening Time">Opening Time</p>
 
             <table class="footer-table">
               <tbody>
 
                 <tr class="table-row">
-                  <th class="table-head" scope="row">Mon - Tue:</th>
+                  <th class="table-head" scope="row"  data-translate="Mon - Tue:">Mon - Tue:</th>
 
-                  <td class="table-data">8AM - 10PM</td>
+                  <td class="table-data"  data-translate="8AM - 10PM">8AM - 10PM</td>
                 </tr>
 
                 <tr class="table-row">
-                  <th class="table-head" scope="row">Wed:</th>
+                  <th class="table-head" scope="row"  data-translate="Wed:">Wed:</th>
 
-                  <td class="table-data">8AM - 7PM</td>
+                  <td class="table-data"  data-translate="8AM - 7PM">8AM - 7PM</td>
                 </tr>
 
                 <tr class="table-row">
-                  <th class="table-head" scope="row">Fri:</th>
+                  <th class="table-head" scope="row"  data-translate="Fri:">Fri:</th>
 
-                  <td class="table-data">7AM - 12PM</td>
+                  <td class="table-data"  data-translate="7AM - 12PM">7AM - 12PM</td>
                 </tr>
 
                 <tr class="table-row">
-                  <th class="table-head" scope="row">Sat:</th>
+                  <th class="table-head" scope="row"  data-translate="Sat:">Sat:</th>
 
-                  <td class="table-data">9AM - 8PM</td>
+                  <td class="table-data"  data-translate="9AM - 8PM">9AM - 8PM</td>
                 </tr>
 
                 <tr class="table-row">
-                  <th class="table-head" scope="row">Sun:</th>
+                  <th class="table-head" scope="row"  data-translate="Sun:">Sun:</th>
 
-                  <td class="table-data">Closed</td>
+                  <td class="table-data"  data-translate="Closed">Closed</td>
                 </tr>
 
               </tbody>
@@ -1586,16 +1592,16 @@ header nav ul li a {
 
           <div class="footer-list">
 
-            <p class="footer-list-title">Newsletter</p>
+            <p class="footer-list-title"  data-translate="Newsletter">Newsletter</p>
 
-            <p class="newsletter-text">
+            <p class="newsletter-text"  data-translate="Authoritatively ">
               Authoritatively morph 24/7 potentialities with error-free partnerships.
             </p>
 
             <form action="" class="newsletter-form">
               <input type="email" name="email" required placeholder="Email Address" class="newsletter-input">
 
-              <button type="submit" class="btn btn-primary">Subscribe</button>
+              <button type="submit" class="btn btn-primary"  data-translate="Subscribe">Subscribe</button>
             </form>
 
           </div>
@@ -1608,8 +1614,8 @@ header nav ul li a {
     <div class="footer-bottom">
       <div class="container">
 
-        <p class="copyright">
-          &copy; 2024 <a href="#" class="copyright-link">Aerobyte.in</a>. All Rights Reserved
+        <p class="copyright" data-translate="All Rights Reserved">
+          &copy; 2024 <a href="#" class="copyright-link" >Aerobyte.in</a>. All Rights Reserved
         </p>
 
       </div>
@@ -1633,7 +1639,50 @@ header nav ul li a {
 
 
 
-  <!-- 
+
+
+
+
+
+
+
+    
+ 
+    <!-- Language Switcher -->
+    
+    <script>
+        async function loadTranslations() {
+          const response = await fetch('translate.json');
+          return await response.json();
+        }
+   
+        async function updateLanguage(language) {
+          const translations = await loadTranslations();
+   
+          // Find all elements with a data-translate attribute
+          document.querySelectorAll('[data-translate]').forEach(element => {
+            const key = element.getAttribute('data-translate');
+            element.innerText = translations[key][language];
+          });
+        }
+   
+        // Event listener for the language switcher
+        document.getElementById('languageSwitcher').addEventListener('change', function() {
+          const selectedLanguage = this.value;
+          updateLanguage(selectedLanguage);
+        });
+   
+        // Default language set to English on page load
+        window.onload = function() {
+          updateLanguage('en');
+        };
+      </script> 
+
+
+
+
+      <!-- ===============================vidya================================== -->
+        <!-- 
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
@@ -1675,5 +1724,4 @@ window.onclick = function(event) {
   </script>
 
 </body>
-
 </html>

@@ -1,0 +1,333 @@
+{
+    "Home": {
+      "en":  "Home",
+      "ar": " بيت"
+    },
+    "About": {
+      "en": "About",
+      "ar":"عن"
+    },
+    "Products": {
+      "en":"Products",
+      "ar":"منتجات"
+    },
+    "Shop":{
+       "en":"Shop",
+       "ar":"محل"
+    },
+    "Blog":{
+        "ar":"مدونة",
+        "en":"Blog"
+    },
+    "Contacts":{
+       "ar":"اتصال",
+       "en":"Contact"
+    },
+    "Contact Us":{
+        "ar":"اتصل بنا",
+        "en":"Contact Us"
+    },
+    "Name":{
+        "ar":"اسم",
+        "en":"Name"
+    },
+    "Email":{
+        "ar":"بريد إلكتروني",
+        "en":"Email"
+    },
+    "Phone":{
+        "ar":"رقم التليفون",
+        "en":"Phone Number"
+    },
+    "Message":{
+        "ar":"رسالة",
+        "en":"Message"
+    },
+    "Send":{
+        "ar":"يرسل",
+        "en":"Send"
+    },
+    "Search":{
+        "ar":"يبحث",
+        "en":"Searck"
+    },
+    "Login/Register":{
+        "ar":"تسجيل الدخول / التسجيل",
+        "en":"Login / Register"
+    },
+    "Wishlist":{
+        "ar":"قائمة الرغبات",
+        "en":"Wishlist"
+    },
+    "Basket":{
+        "ar":"سلة",
+        "en":"Basket"
+    },
+    "Summer":{
+       "ar":"صيف جديد",
+       "en":"New Summer"
+    },
+    "Shoes":{
+         "ar":"مجموعة الأحذية",
+         "en":"Shoes Collection"
+    },
+    "hero":{
+       "ar":"تسريع الفوائد البديلة بكفاءة مع توفير محفزات رائدة للتغيير. النفوذ العالمي موجود مجموعة موسعة من القيادة.",
+       "en":"Competently expedite alternative benefits whereas leading-edge catalysts for change. Globally leverage existing an expanded array of leadership."
+    },
+    "Shop Now":{
+        "ar":"تسوق الآن",
+       "en":"Shop Now"
+    },
+    "Men Collection":{
+        "ar":"مجموعات الرجال",
+        "en":"Men Collections"
+    },
+    "Explore":{
+        "ar":"استكشاف الكل",
+        "en":"Explore All"
+    },
+    "Women Collection":{
+           "ar":"مجموعات النساء",
+        "en":"Women Collections"
+    },
+    "Sports Collections":{
+        "ar":"مجموعات رياضية",
+        "en":"Sports Collections"
+    },
+    "Bestseller":{
+        "ar":" المنتجات الأكثر مبيعا",
+        "en":"Bestsellers Products"
+    },
+    "All":{
+        "ar":"الجميع",
+        "en":"All"
+    },
+    "Nike":{
+        "ar":"نايك",
+        "en":"Nike"
+    },
+    "Adidas":{
+        "ar":"أديداس",
+        "en":"Adidas"
+    },
+    "Puma":{
+        "ar":"بوما",
+        "en":"Puma"
+    },
+    "Bata":{
+        "ar":"باتا",
+        "en":"Bata"
+    },
+    "Apex":{
+        "ar":"قمة",
+        "en":"Apex"
+    },
+    "New":{
+        "ar":"جديد",
+        "en":"New"
+    },
+    "Add to Cart":{
+        "ar":"أضف إلى السلة",
+        "en":"Add to Cart"
+    },
+    "Add to Wishlist":{
+        "ar":"أضف إلى قائمة الرغبات",
+        "en":"Add to Wishlist"
+    },
+    "Quick View":{
+        "ar":"عرض سريع",
+        "en":"Quick View"
+    },
+    "Compare":{
+        "ar":"يقارن",
+        "en":"Compare"
+    },
+    "Men":{
+        "ar":"الرجال",
+        "en":"Men"
+    },
+    "Women":{
+        "ar":"نحيف",
+        "en":"Women"
+    },
+    "Running Sneaker Shoes":{
+        "ar":"أحذية رياضية للجري",
+        "en":"Running Sneaker Shoes"
+    }, 
+    "Sports":{
+        "ar":"الرياضة",
+        "en":"Sports"
+    },
+    "Leather Mens Slipper":{
+        "ar":"شبشب جلد رجالي",
+        "en":"Leather Mens Slipper"
+    },
+    "Simple Fabric Shoe":{
+        "ar":"حذاء قماش بسيط",
+        "en":"Simple Fabric Shoe"
+    },
+    "Air Jordan 7 Retro":{
+        "ar":"الهواء الأردن 7 ريترو",
+        "en":"Air Jordan 7 Retro"
+    },
+    "Nike Air Max 270 SE":{
+        "ar":"نايك اير ماكس 270 إس إي",
+        "en":"Nike Air Max 270 SE "
+    },
+    "Adidas Sneakers Shoes":{
+        "ar":"أحذية أديداس الرياضية",
+        "en":"Adidas Sneakers Shoes "
+    },
+    "Nike Basketball shoes":{
+        "ar":"أحذية كرة السلة نايك",
+        "en":"Nike Basketball shoes"
+    },
+    "Adidas Shoes":{
+        "ar":"أحذية أديداس",
+        "en":"Adidas Shoes"
+    },
+    "The Summer Sale Off 50%":{
+        "ar":"خصم الصيف % 50",
+        "en":"The Summer Sale Off 50%"
+    },
+    "Nike Shoes":{
+        "ar":"أحذية نايك",
+        "en":"Nike Shoes"
+    },
+    "Makes Yourself Keep Sporty":{
+        "ar":"يجعل نفسك تحافظ على الرياضة",
+        "en":"Makes Yourself Keep Sporty"
+    },
+    "New Trend Edition":{
+        "ar":"طبعة الاتجاه الجديد",
+        "en":"New Trend Edition"
+    },
+    "Nike Special":{
+        "ar":"نايك الخاصة",
+        "en":"Nike Special"
+    },
+    "Free Shiping":{
+        "ar":"ًالشحن مجانا",
+        "en":"Free Shiping"
+    },
+    "All orders over":{
+        "ar":"انتهت جميع الطلبات",
+        "en":"All orders over"
+    },
+    "Quick Payment":{
+        "ar":"الدفع السريع",
+        "en":"Quick Payment"
+    },
+    "100% secure payment":{
+        "ar":"دفع آمن % 100",
+        "en":"100% secure payment"
+    },
+    "Free Returns":{
+        "ar":"إرجاع مجاني",
+        "en":"Free Returns"
+    },
+    "Money back in 30 days":{
+        "ar":"استعادة الأموال خلال 30 يومًا",
+        "en":"Money back in 30 days"
+    },
+    "24/7 Support":{
+        "ar":"دعم 24/7",
+        "en":"24/7 Support"
+    },
+    "Get Quick Support":{
+        "ar":"احصل على الدعم السريع",
+        "en":"Get Quick Support"
+    },
+    "#201 , 27-268/c/1 , S.C.B Nagar , Gajularamaram , Hyderabad -500055 , Telangana State.":{
+        "ar":"#201، 27-268/c/1، إس سي بي ناجار، جاجولارارام، حيدر أباد -500055، ولاية تيلانجانا.",
+        "en":" #201 , 27-268/c/1 , S.C.B Nagar , Gajularamaram , Hyderabad -500055 , Telangana State."
+    },
+    "My Account":{
+        "ar":"حسابي",
+        "en":"My Account"
+    },
+    "View Cart":{
+        "ar":"عرض العربة",
+        "en":"View Cart"
+    },
+    "New Products":{
+        "ar":"منتجات جديدة",
+        "en":"New Products"
+    },
+    "Opening Time":{
+        "ar":"وقت الافتتاح",
+        "en":"Opening Time"
+    },
+    "Mon - Tue:":{
+        "ar":"الإثنين - الثلاثاء:",
+        "en":"Mon - Tue:"
+    },
+    "8AM - 10PM":{
+        "ar":"8 صباحًا - 10 مساءً",
+        "en":"8AM - 10PM"
+    },
+    "Wed:":{
+        "ar":"تزوج:",
+        "en":"Wed:"
+    },
+    "8AM - 7PM":{
+        "ar":"8 صباحًا - 7 مساءً",
+        "en":"8AM - 7PM"
+    },
+    "Fri:":{
+        "ar":"الجمعة:",
+        "en":"Fri:"
+    },
+    "7AM - 12PM":{
+        "ar":"7 صباحًا - 12 ظهرًا",
+        "en":"7AM - 12PM"
+    },
+    "Sat:":{
+        "ar":"قعد:",
+        "en":"Sat:"
+    },
+    "9AM - 8PM":{
+        "ar":"9 صباحًا - 8 مساءً",
+        "en":"9AM - 8PM"
+    }, 
+    "Sun:":{
+        "ar":"شمس:",
+        "en":"Sun:"
+    },
+     "Closed":{
+        "ar":"مغلق",
+        "en":"Closed"
+    }, 
+    "Newsletter":{
+        "ar":"النشرة الإخبارية",
+        "en":"Newsletter"
+    },
+     "Authoritatively ":{
+        "ar":"تحويل الإمكانات بشكل رسمي على مدار الساعة طوال أيام الأسبوع من خلال شراكات خالية من الأخطاء.",
+        "en":" Authoritatively morph 24/7 potentialities with error-free partnerships."
+    },
+     "Subscribe":{
+        "ar":"يشترك",
+        "en":"Subscribe"
+    },
+    "All Rights Reserved":{
+        "ar":"جميع الحقوق محفوظة",
+        "en":"All Rights Reserved"
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
